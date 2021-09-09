@@ -24,3 +24,5 @@ const refresh = (req,res,SpotifyWebApi) => {
         res.status(400).send('There was an error')
     })
 }
+
+module.exports = refresh;
