@@ -1,8 +1,7 @@
-const findLyrics = async (req,res,lyricsFinder) => {
-    const lyrics = await lyricsFinder(req.query.artist, req.query.track) || "No Lyrics Available";
-
+const lyricsFinder = require('lyrics-finder');
+const findLyrics = async (req,res) => {
+    const lyrics = await lyricsFinder(req.artist, req.track) || "No Lyrics Available";
     res.status(200).json({lyrics})
-
 }
 
 module.exports = findLyrics;
